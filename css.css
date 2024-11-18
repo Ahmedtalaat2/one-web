@@ -23,7 +23,7 @@ body {
 .back{
     width: 100%;
     height: 100%;
-   --color: rgba(114, 114, 114, 0.2);
+   --color: rgba(114, 114, 114, 0.04);
     background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%,
      var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%,
       var(--color) 76%, transparent 77%,transparent),
@@ -46,7 +46,18 @@ header{
     padding: 20px 0;
  opacity: 1;
 }
-
+ .btn{
+    background-color: var(--min);
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--whit);
+    font-weight: 700;
+    transition: 0.5s ease-in-out;
+}
+.btn:hover{
+    scale: 1.1;
+    background-color: var(--silver);
+}
 header a {
     text-decoration: none;
     color: var(--whit);
@@ -190,7 +201,23 @@ header .logo a {
         padding: 0.5rem 1rem;
         position: relative;
       }
-    
+      .btn{
+        background-color: var(--min);
+        padding: 3px 15px;
+        border-radius: 5px;
+        border: 1px solid var(--whit);
+        font-weight: 500;
+        font-size: 0.8rem;
+        transition: 0.5s ease-in-out;
+    }
+    .btn:hover{
+        scale: 1.1;
+        background-color: var(--silver);
+    }
+    header a {
+        text-decoration: none;
+        color: var(--whit);
+    }
 }
 .one {
     height: 100vh;
@@ -216,14 +243,15 @@ header .logo a {
     color: var(--whit);
     padding-bottom: 40px;
 }
-.link-one .btn-23{
-    margin: 4px;
+.one-btn{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
-.link-one  a{
+.one-btn a{
     text-decoration: none;
     color: var(--whit);
 }
-
 @media (max-width: 768px) {
     .one {
         height: 100vh;
@@ -266,10 +294,12 @@ header .logo a {
     align-items: center;
     text-align: center;
     padding: 100px  0;
+
 }
 .toww {
     width: 85%;
     margin: auto;
+
 }
 
 .tow .text1 h2 {
@@ -295,22 +325,32 @@ header .logo a {
     gap: 10px;
 }
 .tow .type2 .serv {
-    background-color:var(--min);
+    background-color:var(--silver);
     flex-grow: 1;
     flex-basis: 350px;
     border-radius: 5px;
     padding: 10px;
+    --color: rgba(114, 114, 114, 0.06);
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%,
+     var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%,
+      var(--color) 76%, transparent 77%,transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, 
+        var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%
+        , var(--color) 76%, transparent 77%,transparent);
+    background-size: 55px 55px;
+    z-index: 999;
 }
 
 .tow .type2 .serv i {
     font-size: 2.5rem;
-    color: var(--silver);
+    color: var(--whit);
+    opacity: 0.7;
     margin: 10px;
 }
 
 .tow .type2 .serv h3 {
     font-size: 1rem;
-    color:var(--silver);
+    color:var(--whit);
 font-weight: 900;
 }
 
@@ -353,7 +393,6 @@ opacity: 0.655;
         gap: 10px;
     }
     .tow .type2 .serv {
-        background-color:var(--min);
         flex-grow: 1;
         flex-basis: 350px;
         border-radius: 5px;
@@ -362,13 +401,13 @@ opacity: 0.655;
     
     .tow .type2 .serv i {
         font-size: 2rem;
-        color: var(--silver);
+
         margin: 5px;
     }
     
     .tow .type2 .serv h3 {
         font-size: 0.9rem;
-        color:var(--silver);
+
     font-weight: 900;
     }
     
@@ -423,17 +462,28 @@ opacity: 0.655;
     flex-basis: 350px;
     text-align: center;
     border: 0px solid ;
+    border-radius: 5px;
     box-shadow:0px 0px 7px 0.5px #387478  ;
     background-color: var(--silver);
+    --color: rgba(114, 114, 114, 0.06);
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%,
+     var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%,
+      var(--color) 76%, transparent 77%,transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, 
+        var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%
+        , var(--color) 76%, transparent 77%,transparent);
+    background-size: 55px 55px;
+    z-index: 999;
 }
 
 .portfolo .port1 .port2 img {
     width: 100%;
+    border-radius: 5px 5px 0 0;
 }
 
 .portfolo .port1 .port2 h2 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 900;
     color: var(--whit);
     padding: 10px 0px;
 }
@@ -441,6 +491,7 @@ opacity: 0.655;
 .portfolo .port1 .port2 p {
     font-size: 0.8rem;
     color: var(--whit);
+    opacity: 0.5;
     padding: 0 20px ;
     margin-bottom: 20px;
 }
@@ -489,14 +540,13 @@ opacity: 0.655;
     
     .portfolo .port1 .port2 h2 {
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: 800;
     
-        padding: 10px 0px;
+        padding: 0px 0px;
     }
     
     .portfolo .port1 .port2 p {
         font-size: 0.7rem;
-        color: var(--whit);
     }
 }
 .three {
