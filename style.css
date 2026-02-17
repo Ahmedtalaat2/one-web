@@ -7,6 +7,13 @@
   font-family: "Poppins", sans-serif;
   font-family: "cairo", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  transition: all 0.3s ease;
+}
 
 body {
   background: linear-gradient(#243642, #1f323d);
@@ -65,7 +72,20 @@ header {
   padding: 20px 0;
   opacity: 1;
 }
-
+.header1 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--whit);
+}
+.header1 .logo h2 {
+  font-size: 1.2rem;
+}
+.header1 .logo img {
+  width: 45px;
+  border-radius: 50%;
+  border: 2px solid var(--whit);
+}
 .btn {
   background-color: var(--min);
   padding: 5px 20px;
@@ -219,16 +239,20 @@ header .logo a {
     padding: 10px 0;
   }
 
-  header a {
-    text-decoration: none;
+  .header1 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--whit);
   }
-
-  header .logo a {
-    font-size: 0.9rem;
-    font-weight: bold;
-    font-weight: 600;
+  .header1 .logo h2 {
+    font-size: 1rem;
   }
-
+  .header1 .logo img {
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--whit);
+  }
   .btn-23 {
     border-radius: 1rem;
     border-width: 1px;
@@ -272,17 +296,39 @@ header .logo a {
 }
 
 .one .ahmed .text img {
-  width: 35%;
+  width: 28%;
   margin-top: -70px;
+  border-radius: 50%;
+  border: 2px solid var(--whit);
+  margin-bottom: 30px;
+  animation: float 4s ease-in-out infinite;
 }
-
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .one .ahmed .text h2 {
   font-size: 1.5rem;
   line-height: 1;
   text-align: center;
   color: var(--whit);
   padding-bottom: 8px;
+  margin-bottom: 5px;
 }
+.one .ahmed span {
+  background-color: var(--min);
+  padding: 1px 8px;
+  border-radius: 5px;
+  transform: rotate(30deg) scale(1.05);
+}
+
 .one .ahmed .text h3 {
   font-size: 1.1rem;
   line-height: 1.5;
@@ -303,7 +349,7 @@ header .logo a {
 
 @media (max-width: 768px) {
   .one {
-    height: 100vh;
+    height: 85vh;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -311,8 +357,9 @@ header .logo a {
   }
 
   .one .ahmed .text img {
-    width: 65%;
+    width: 35%;
     margin-top: -70px;
+    margin-bottom: 10px;
   }
 
   .one .ahmed .text {
@@ -659,6 +706,7 @@ header .logo a {
   padding: 5px;
   font-size: 1.3rem;
   font-weight: 900;
+  margin-bottom: -10px;
 }
 
 .three p {
@@ -667,13 +715,13 @@ header .logo a {
   font-weight: 500;
   width: 75%;
   margin: auto;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
   .three {
     text-align: center;
-    padding: 70px 0;
+    padding: 50px 0;
   }
 
   .three h2 {
@@ -892,103 +940,166 @@ header .logo a {
 }
 
 footer {
-  background-color: var(--whit);
+  background-color: #0f172a; /* لون كحلي غامق جداً وفخم */
+  color: #f8fafc;
+  padding: 60px 20px 20px;
+  font-family: "Cairo", sans-serif; /* تأكد من استدعاء الخط من Google Fonts */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-all {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin: auto;
-  padding: 50px 0 20px 0;
+  flex-wrap: wrap; /* عشان يظبط على الموبايل */
+  gap: 30px;
 }
 
-.footer-all .taxt h2 {
-  color: var(--silver);
-  font-weight: bold;
-  font-size: 1.5rem;
+.taxt h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: -10px;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #f7f9fa, #4d9a79); /* تدرج لوني للاسم */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.footer-all .taxt p {
-  color: var(--silver);
-  font-weight: 500;
-  letter-spacing: 4px;
+.taxt p {
+  color: var(--min);
+  font-size: 16px;
 }
 
-.footer-all .icon i {
-  color: var(--silver);
-  font-size: 1.5rem;
-  padding: 0 5px;
+.icon {
+  display: flex;
+  gap: 15px;
 }
 
-.footer-all .icon .face:hover i {
-  color: #3d5998;
+.icon a {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px; /* حواف دائرية عصرية */
+  color: #cbd5e1;
+  font-size: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
 }
 
-.footer-all .icon .wats:hover i {
-  color: #25d366;
+/* تأثيرات الـ Hover لكل أيقونة بلونها الخاص */
+.icon a:hover {
+  transform: translateY(-8px);
+  color: #fff;
 }
 
-.footer-all .icon .linked:hover i {
-  color: #0077b5;
+.icon a.face:hover {
+  background: #1877f2;
 }
-
-.footer-all .icon .insta:hover i {
-  background: #833ab4;
-  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-  border-radius: 0.3rem;
+.icon a.wats:hover {
+  background: #25d366;
 }
-
-.footer-all .icon .git:hover i {
-  color: #24292e;
+.icon a.linked:hover {
+  background: #0077b5;
+}
+.icon a.insta:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+.icon a.git:hover {
+  background: #333;
 }
 
 .footer-tow {
-  padding: 10px 0 20px 0;
   text-align: center;
-  color: var(--silver);
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-tow h3 {
-  font-size: 1rem;
-  opacity: 0.6;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 400;
 }
 
+/* Responsive للموبايل */
 @media (max-width: 768px) {
-  footer {
-    background-color: var(--whit);
-  }
-
   .footer-all {
-    width: 90%;
-    margin: auto;
-    padding: 30px 0 0 0;
-  }
-
-  .footer-all .taxt h2 {
-    font-size: 1rem;
-  }
-
-  .footer-all .taxt p {
-    letter-spacing: 3px;
-    font-size: 0.7rem;
-    opacity: 0.6;
-  }
-
-  .footer-all .icon i {
-    color: var(--silver);
-    font-size: 1.3rem;
-    padding: 0 3px;
-  }
-
-  .footer-tow {
+    flex-direction: column;
     text-align: center;
   }
+}
+/* ===== GLOBAL ANIMATIONS ===== */
 
-  .footer-tow h3 {
-    font-size: 0.7rem;
-    padding-bottom: 7px;
+header,
+.one,
+.tow,
+.portfolo,
+.three,
+.send,
+footer {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons */
+.btn:hover,
+.form-submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Services */
+.tow .type2 .serv:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+/* Portfolio */
+.portfolo .port1 .port2 {
+  overflow: hidden;
+}
+
+.portfolo .port1 .port2 img {
+  transition: transform 0.6s ease;
+}
+
+.portfolo .port1 .port2:hover img {
+  transform: scale(1.1);
+}
+
+/* Social Icons */
+.footer-all .icon a i {
+  transition: transform 0.4s ease;
+}
+
+.footer-all .icon a:hover i {
+  transform: scale(1.3) rotate(5deg);
+}
+
+/* Inputs Focus */
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 10px var(--min);
 }
